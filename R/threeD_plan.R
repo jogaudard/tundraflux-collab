@@ -24,15 +24,14 @@ threeD_plan <- list(
         treatment = "warming",
         plot_id = "turfID",
         carbon_type = "type",
-        CO2_raw = "f_flux",
         PAR = "PAR_ave",
         chamber_temperature = "f_temp_air_ave",
         soil_temperature_5cm = "temp_soil_ave", # ours is at 2cm, but this is the closest they have
       ) |>
       mutate(
         treatment = case_when(
-          treatment == "W" ~ "Warming",
-          treatment == "A" ~ "Ambient"
+          treatment == "W" ~ "others",
+          treatment == "A" ~ "CTL"
         ),
         flux_date = date(date_time),
         flux_time = as_hms(date_time),
@@ -40,12 +39,34 @@ threeD_plan <- list(
         flux_doy = yday(date_time),
         carbon_type = case_when(
           carbon_type == "NEE" ~ "NEE",
-          carbon_type == "ER" ~ "Reco"
+          carbon_type == "ER" ~ "Rec"
         ),
-        CO2_raw = f_flux * 1000, # convert from mmol/m2/h to umol/m2/h
-        CO2_raw_unit = "umol/m2/h",
+        CO2_raw = f_flux * 1000 / 3600, # convert from mmol/m2/h to umol/m2/s
+        CO2_raw_unit = "umol CO2 m-2 s-1",
         CO2_raw_slope = "non-linear slope",
         flux_duration = if (flux_year == 2020) 120 else 180, # 120 seconds in 2020, 180 seconds in 2021
       )
+  ),
+  tar_target(
+    name = output_fluxes_threeD,
+    command = prepare_fluxes_threeD |>
+      select(
+        treatment,
+        plot_id,
+        flux_date,
+        flux_time,
+        flux_year,
+        flux_doy,
+        carbon_type,
+        CO2_raw,
+        CO2_raw_unit,
+        CO2_raw_slope,
+        PAR,
+        soil_temperature_5cm,
+        chamber_temperature,
+        flux_duration
+      ) |>
+      write_csv("data/threeD_fluxes_tundrafluxready.csv"),
+    type = "file"
   )
 )
