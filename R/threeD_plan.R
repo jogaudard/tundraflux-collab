@@ -16,10 +16,10 @@ threeD_plan <- list(
     name = prepare_fluxes_threeD,
     command = read_fluxes_threeD |>
       filter(
-        grazing == "C"
-        & Namount_kg_ha_y == 0
-        & type %in% c("NEE", "ER")
-        & is.na(par_correction)
+        "grazing" == "C"
+        & "Namount_kg_ha_y" == 0
+        & "type" %in% c("NEE", "ER")
+        & is.na("par_correction")
       ) |>
       rename(
         treatment = "warming",
