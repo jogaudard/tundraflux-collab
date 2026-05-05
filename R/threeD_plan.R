@@ -9,8 +9,13 @@ threeD_plan <- list(
     format = "file"
   ),
   tar_target(
+    name = raw_fluxes_threeD,
+    command = "data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv",
+    format = "file"
+  ),
+  tar_target(
     name = read_fluxes_threeD,
-    command = read_csv(import_fluxes_threeD)
+    command = read_csv(raw_fluxes_threeD)
   ),
   tar_target(
     name = prepare_fluxes_threeD,
@@ -35,7 +40,6 @@ threeD_plan <- list(
         chamber_temperature,
         flux_duration
       ) |>
-      write_csv("data/threeD_fluxes_tundrafluxready.csv"),
-    format = "file"
+      write_csv("data/threeD_fluxes_tundrafluxready.csv")
   )
 )
