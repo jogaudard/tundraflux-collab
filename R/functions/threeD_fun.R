@@ -5,6 +5,7 @@ read_fluxes_threeD |>
         & Namount_kg_ha_y == 0
         & type %in% c("NEE", "ER")
         & is.na(par_correction)
+        & !is.na(f_flux)
       ) |>
       rename(
         plot_id = "turfID",

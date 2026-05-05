@@ -15,7 +15,7 @@ threeD_plan <- list(
   ),
   tar_target(
     name = read_fluxes_threeD,
-    command = read_csv(raw_fluxes_threeD)
+    command = read_csv(raw_fluxes_threeD, show_col_types = FALSE)
   ),
   tar_target(
     name = prepare_fluxes_threeD,
