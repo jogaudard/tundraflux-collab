@@ -5,7 +5,8 @@ threeD_plan <- list(
       doi = "10.5281/zenodo.17301125",
       path = "data/",
       files = "xiii_Three-D_clean_co2_fluxes_2020-2021.csv"
-    ), type = "file"
+    ),
+    format = "file"
   ),
   tar_target(
     name = read_fluxes_threeD,
@@ -67,6 +68,6 @@ threeD_plan <- list(
         flux_duration
       ) |>
       write_csv("data/threeD_fluxes_tundrafluxready.csv"),
-    type = "file"
+    format = "file"
   )
 )
