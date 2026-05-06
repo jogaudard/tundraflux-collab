@@ -38,7 +38,27 @@ threeD_plan <- list(
         PAR,
         soil_temperature_5cm,
         chamber_temperature,
-        flux_duration
+        flux_duration_min,
+        measurment_method,
+        machine,
+        machine_type,
+        time_of_measurement,
+        `experimental treatment`,
+        plot_size_m2,
+        flux_plot_size_m2,
+        flux_measurement_start_year,
+        warming_start_year,
+        site_name,
+        latitude,
+        longitude,
+        altitude_m,
+        mean_annual_precipitation,
+        PI_contact,
+        PI_email,
+        add_contact_1,
+        email_1,
+        Institue,
+        Reference
       ) |>
       write_csv("data/threeD_fluxes_tundrafluxready.csv")
   )
