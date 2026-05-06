@@ -10,6 +10,7 @@ read_fluxes_threeD |>
       rename(
         plot_id = "turfID",
         carbon_type = "type",
+        site_name = "origSiteID"
       ) |>
       mutate(
         PAR = round(PAR_ave, 2),
@@ -33,6 +34,37 @@ read_fluxes_threeD |>
         flux_duration = case_when(
           flux_year == 2020 ~ 120,
           flux_year == 2021 ~ 180
-        )
+        ),
+        measurment_method = "Manual closed static/non-steady state chamber",
+        machine = "LICOR",
+        machine_type = "IR", # Li-840A is IRGA, and more recent LI are laser just need to remember for other datasets
+        time_of_measurement = "Daytime", # what about the diurnals?
+        `experimental treatment` = "Other treatment", #transplant
+        plot_size_m2 = 0.5 * 0.5,
+        flux_plot_size_m2 = 0.25 * 0.25,
+        flux_measurement_start_year = 2020,
+        warming_start_year = 2019,
+        latitude = case_when(
+          site_name == "Joasete" ~ 60.86183,
+          site_name == "Liahovden" ~ 60.85994
+        ),
+        longitude = case_when(
+          site_name == "Joasete" ~ 7.16800,
+          site_name == "Liahovden" ~ 7.19504
+        ),
+        altitude_m = case_when( # not sure how to deal with transplant. This is the elevation of the orig site
+          site_name == "Joasete" ~ 920,
+          site_name == "Liahovden" ~ 1290
+        ),
+        mean_annual_precipitation = case_when(
+          site_name == "Joasete" ~ 1256,
+          site_name == "Liahovden" ~ 2089 
+        ),
+        PI_contact = "Aud H Halbritter",
+        PI_email = "aud.halbritter@uib.no",
+        add_contact_1 = "Joseph Gaudard",
+        email_1 = "joseph.gaudard@pm.me",
+        Institue = "University of Bergen",
+        Reference = "Halbritter et al. 2026, SciDat. https://doi.org/10.1038/s41597-025-06503-6"
       )
 }
