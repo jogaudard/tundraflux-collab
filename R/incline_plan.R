@@ -19,6 +19,25 @@ incline_plan <- list(
     ),
     format = "file"
     ),
+  tar_target(
+    name = import_incline_metadata,
+    command = get_file(
+      node = "zhk3m",
+      file = "INCLINE_metadata.csv",
+      path = "data",
+      remote_path = "RawData"
+    ),
+    format = "file"
+    ),
+    tar_target(
+        name = raw_incline_metadata,
+        command = "data/INCLINE_metadata.csv",
+        format = "file"
+    ),
+    tar_target(
+        name = read_incline_metadata,
+        command = read_csv2(raw_incline_metadata, show_col_types = FALSE)
+    ),
     # tar_target(
     #     name = raw_fluxes_incline_2020,
     #     command = "data/INCLINE_c-flux_2020.csv",
@@ -43,11 +62,9 @@ incline_plan <- list(
     # ),
     tar_target(
         name = prepare_fluxes_incline,
-        command = prepare_fluxes_incline_fun(read_fluxes_incline_2022)
+        command = prepare_fluxes_incline_fun(read_fluxes_incline_2022, read_incline_metadata)
     ),
     tar_target(
         name = output_fluxes_incline,
-        command = prepare_fluxes_incline |>
-            select(
-                
+        command = write_csv(prepare_fluxes_incline, "data/incline_fluxes_tundrafluxready.csv")
 ))
