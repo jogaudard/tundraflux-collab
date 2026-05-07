@@ -1,9 +1,7 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-import_fluxes_threeD|stem|08d5f59e833de599|7fb3d9340e5aeb94|2c530c1562a7fbd1|451526265||t0s|s0b|0|file|local|vector|||2.825||
-test|object|08d5f59e833de599
-.Random.seed|object|731effc8d69ac027
-raw_fluxes_threeD|stem|3aeccbf78d6eab8a|a93ffa0ca77dee43|2c530c1562a7fbd1|-1210084640|data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv|t20578.4874097756s|s758186b|758186|file|local|vector|||0||
-read_fluxes_threeD|stem|e03bb7a5bce046f1|1a872de9ca835c41|f0991b479f78cd86|-612624008||t20578.5310998571s|s82667b|82667|rds|local|vector|||0.081|One or more parsing issues, call `problems()` on your data frame for details, e.g.:   dat <- vroom(...)   problems(dat)|
-prepare_fluxes_threeD|stem|7bb64f955aef79c5|45d266741e4f9455|6ae2e7b9fbbd298f|-156520403||t20580.3800785665s|s25291b|25291|rds|local|vector|||0.02||
-output_fluxes_threeD|stem|693b8328113f5b2f|815ca23f972cb641|5014978d9e6bcfb3|-2112975629||t20580.3825639879s|s12202b|12202|rds|local|vector|||0.079||
 prepare_fluxes_threeD_fun|function|bf00962d3bdd117a
+import_fluxes_threeD|stem|08d5f59e833de599|7fb3d9340e5aeb94|2c530c1562a7fbd1|451526265||t0s|s0b|0|file|local|vector|||37||
+raw_fluxes_threeD|stem|3aeccbf78d6eab8a|a93ffa0ca77dee43|2c530c1562a7fbd1|-1210084640|data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv|t20580.3872748965s|s758186b|758186|file|local|vector|||0||
+read_fluxes_threeD|stem|5f0680c6a331d0a5|1a872de9ca835c41|f0991b479f78cd86|-612624008||t20580.3872767483s|s82660b|82660|rds|local|vector|||0.078|One or more parsing issues, call `problems()` on your data frame for details, e.g.:   dat <- vroom(...)   problems(dat)|
+prepare_fluxes_threeD|stem|7bb64f955aef79c5|45d266741e4f9455|d1ffd532a09c48a4|-156520403||t20580.3872772692s|s25291b|25291|rds|local|vector|||0.026||
+output_fluxes_threeD|stem|693b8328113f5b2f|815ca23f972cb641|5014978d9e6bcfb3|-2112975629||t20580.3872775933s|s12202b|12202|rds|local|vector|||0.014||
