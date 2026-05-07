@@ -8,14 +8,14 @@ threeD_plan <- list(
     ),
     format = "file"
   ),
-  tar_target(
-    name = raw_fluxes_threeD,
-    command = "data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv",
-    format = "file"
-  ),
+  # tar_target(
+  #   name = raw_fluxes_threeD,
+  #   command = "data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv",
+  #   format = "file"
+  # ),
   tar_target(
     name = read_fluxes_threeD,
-    command = read_csv(raw_fluxes_threeD, show_col_types = FALSE)
+    command = read_csv(import_fluxes_threeD, show_col_types = FALSE)
   ),
   tar_target(
     name = prepare_fluxes_threeD,
@@ -31,14 +31,14 @@ threeD_plan <- list(
     ),
     format = "file"
   ),
-  tar_target(
-    name = raw_fluxes_PFTC6,
-    command = "data/PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv",
-    format = "file"
-  ),
+  # tar_target(
+  #   name = raw_fluxes_PFTC6,
+  #   command = "data/PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv",
+  #   format = "file"
+  # ),
   tar_target(
     name = read_fluxes_PFTC6,
-    command = read_csv(raw_fluxes_PFTC6, show_col_types = FALSE)
+    command = read_csv(import_fluxes_PFTC6, show_col_types = FALSE)
   ),
   tar_target(
     name = prepare_fluxes_PFTC6,
