@@ -23,11 +23,11 @@ prepare_fluxes_incline_fun <- function(read_fluxes_incline_2022, read_incline_me
     treatment = "OTC",
     RMSE = "f_RMSE",
     flux = "f_flux",
-    temp_airavg = "f_temp_air_ave",
+    temp_airavg = "f_temp_air_ave", # this is actually the temp inside the chamber
     temp_soilavg = "temp_soil_ave"
   ) |>
   drop_na(date, flux) |>
   pivot_wider(names_from = "type", values_from = "flux") |>
   arrange(ITEX_ID) |>
-  relocate(ITEX_ID, date, treatment, plotID, NEE, GPP, RMSE, temp_airavg, temp_soilavg, siteID)
+  relocate(ITEX_ID, date, treatment, plotID, NEE, RMSE, GPP, temp_airavg, temp_soilavg, siteID)
 }
