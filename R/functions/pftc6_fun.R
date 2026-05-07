@@ -26,7 +26,7 @@ read_fluxes_PFTC6 |>
           carbon_type == "ER" ~ "Rec",
           carbon_type == "GPP" ~ "GPP"
         ),
-        CO2_raw = f_flux * 1000 / 3600, # convert from mmol/m2/h to umol/m2/s
+        CO2_raw = flux_value * 1000 / 3600, # convert from mmol/m2/h to umol/m2/s
         CO2_raw_unit = "umol CO2 m-2 s-1",
         CO2_raw_slope = "non-linear slope",
         flux_duration_min = 3,
