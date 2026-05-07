@@ -41,19 +41,27 @@ read_fluxes_PFTC6 |>
         warming_start_year = 2019,
         latitude = case_when(
           site_name == "Joasete" ~ 60.86183,
-          site_name == "Liahovden" ~ 60.85994
+          site_name == "Liahovden" ~ 60.85994,
+          site_name == "Hogsete" ~ 	60.8760,
+          site_name == "Vikesland" ~ 60.8802
         ),
         longitude = case_when(
           site_name == "Joasete" ~ 7.16800,
-          site_name == "Liahovden" ~ 7.19504
+          site_name == "Liahovden" ~ 7.19504,
+          site_name == "Hogsete" ~ 7.1766,
+          site_name == "Vikesland" ~ 7.1699
         ),
         altitude_m = case_when( # not sure how to deal with transplant. This is the elevation of the orig site
           site_name == "Joasete" ~ 920,
-          site_name == "Liahovden" ~ 1290
+          site_name == "Liahovden" ~ 1290,
+          site_name == "Hogsete" ~ 700,
+          site_name == "Vikesland" ~ 469
         ),
         mean_annual_precipitation = case_when(
           site_name == "Joasete" ~ 1256,
-          site_name == "Liahovden" ~ 2089 
+          site_name == "Liahovden" ~ 2089,
+          site_name == "Hogsete" ~ 1432,
+          site_name == "Vikesland" ~ 1292
         ),
         PI_contact = "Aud H Halbritter",
         PI_email = "aud.halbritter@uib.no",
