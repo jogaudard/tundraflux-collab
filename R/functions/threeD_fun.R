@@ -3,7 +3,7 @@ read_fluxes_threeD |>
       filter(
         grazing == "C"
         & Namount_kg_ha_y == 0
-        & type %in% c("NEE", "ER")
+        & type %in% c("NEE", "ER", "GPP")
         & is.na(par_correction)
         & !is.na(f_flux)
       ) |>
@@ -26,7 +26,8 @@ read_fluxes_threeD |>
         flux_doy = yday(date_time),
         carbon_type = case_when(
           carbon_type == "NEE" ~ "NEE",
-          carbon_type == "ER" ~ "Rec"
+          carbon_type == "ER" ~ "Rec",
+          carbon_type == "GPP" ~ "GPP"
         ),
         CO2_raw = f_flux * 1000 / 3600, # convert from mmol/m2/h to umol/m2/s
         CO2_raw_unit = "umol CO2 m-2 s-1",
