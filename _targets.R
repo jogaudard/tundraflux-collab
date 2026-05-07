@@ -13,7 +13,9 @@ tar_option_set(
     "tibble",
     "tidyverse",
     "hms",
-    "zen4R") # Packages that your targets need for their tasks.
+    "zen4R",
+    "dataDownloader"
+  ) # Packages that your targets need for their tasks.
   # format = "qs", # Optionally set the default storage format. qs is fast.
   #
   # Pipelines that take a long time to run may benefit from

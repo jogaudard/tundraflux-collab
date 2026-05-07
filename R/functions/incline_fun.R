@@ -17,7 +17,7 @@ prepare_fluxes_incline_fun <- function(read_fluxes_incline_2022, read_incline_me
     ),
     f_flux = f_flux * 0.04401 # they want g CO2 / m2 / h
   ) |>
-  select(plotID, siteID, date, OTC, temp_soil_ave, f_flux, f_temp_air_ave, ITEX_ID, soil_moisture, comments, f_RMSE, PAR_ave) |>
+  select(plotID, siteID, date, OTC, temp_soil_ave, f_flux, f_temp_air_ave, ITEX_ID,  f_RMSE, PAR_ave) |>
   rename(
     treatment = "OTC",
     RMSE = "f_RMSE",
@@ -27,5 +27,5 @@ prepare_fluxes_incline_fun <- function(read_fluxes_incline_2022, read_incline_me
   ) |>
   drop_na(date, flux) |>
   arrange(ITEX_ID) |>
-  relocate(ITEX_ID, date, treatment, plotID, flux, RMSE, temp_airavg, temp_soilavg, soil_moisture, siteID, comments)
+  relocate(ITEX_ID, date, treatment, plotID, flux, RMSE, temp_airavg, temp_soilavg, siteID)
 }
