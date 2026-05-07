@@ -29,5 +29,5 @@ prepare_fluxes_incline_fun <- function(read_fluxes_incline_2022, read_incline_me
   drop_na(date, flux) |>
   pivot_wider(names_from = "type", values_from = "flux") |>
   arrange(ITEX_ID) |>
-  relocate(ITEX_ID, date, treatment, plotID, flux, RMSE, temp_airavg, temp_soilavg, siteID)
+  relocate(ITEX_ID, date, treatment, plotID, NEE, GPP, RMSE, temp_airavg, temp_soilavg, siteID)
 }
