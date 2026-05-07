@@ -1,11 +1,14 @@
 threeD_plan <- list(
   tar_target(
     name = import_fluxes_threeD,
-    command = download_zenodo(
+    command = {
+      download_zenodo(
       doi = "10.5281/zenodo.17301125",
       path = "data/",
       files = "xiii_Three-D_clean_co2_fluxes_2020-2021.csv"
-    ),
+    )
+    file.path("data", "xiii_Three-D_clean_co2_fluxes_2020-2021.csv") # because download zenodo doesn't return the path to the file, we need to specify it here for the target
+  },
     format = "file"
   ),
   # tar_target(
