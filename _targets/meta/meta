@@ -1,16 +1,22 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-import_fluxes_threeD|stem|08d5f59e833de599|7fb3d9340e5aeb94|2c530c1562a7fbd1|451526265||t0s|s0b|0|file|local|vector|||2.736||
 import_incline_metadata|stem|ba9a4830dd02896a|d7b6a43ad6f5fc17|2c530c1562a7fbd1|205027693|data/INCLINE_metadata.csv|t20580.4735018709s|s13521b|13521|file|local|vector|||3.503||
 raw_fluxes_incline_2022|stem|6e7620cdde647fa9|0a1ea76677188d86|2c530c1562a7fbd1|1283046965|data/INCLINE_c-flux_2022.csv|t20580.4773589691s|s285185b|285185|file|local|vector|||0||
 raw_incline_metadata|stem|ba9a4830dd02896a|98845f0208243b2a|2c530c1562a7fbd1|-1648091198|data/INCLINE_metadata.csv|t20580.4735018709s|s13521b|13521|file|local|vector|||0||
 import_fluxes_incline_2022|stem|6e7620cdde647fa9|2eddf23f0cb0b1d0|2c530c1562a7fbd1|-1900136081|data/INCLINE_c-flux_2022.csv|t20580.4773589691s|s285185b|285185|file|local|vector|||2.217||
 raw_fluxes_threeD|stem|3aeccbf78d6eab8a|a93ffa0ca77dee43|2c530c1562a7fbd1|-1210084640|data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv|t20580.4776997151s|s758186b|758186|file|local|vector|||0||
-read_fluxes_incline_2022|stem|6c12e282607ed193|3b0257ff95a50e9e|f0aad89773a58b7f|296465328||t20580.4777687555s|s45953b|45953|rds|local|vector|||0.072||
-read_incline_metadata|stem|3b29c30f75f4a784|1bf3af7ef9f14bdf|ea18d842a47b615d|-1246230469||t20580.4777692069s|s2226b|2226|rds|local|vector|||0.012||
-read_fluxes_threeD|stem|5f0680c6a331d0a5|1a872de9ca835c41|f0991b479f78cd86|-612624008||t20580.4777696352s|s82660b|82660|rds|local|vector|||0.019|One or more parsing issues, call `problems()` on your data frame for details, e.g.:   dat <- vroom(...)   problems(dat)|
-prepare_fluxes_threeD|stem|7bb64f955aef79c5|45d266741e4f9455|d1ffd532a09c48a4|-156520403||t20580.4851052006s|s25291b|25291|rds|local|vector|||0.015||
-output_fluxes_threeD|stem|693b8328113f5b2f|815ca23f972cb641|5014978d9e6bcfb3|-2112975629||t20580.485106439s|s12202b|12202|rds|local|vector|||0.017||
-prepare_fluxes_threeD_fun|function|bf00962d3bdd117a
-prepare_fluxes_incline_fun|function|13970d84e632891a
 prepare_fluxes_incline|stem|da2180c390afc64b|0bef7746afef09bc|5d13f6ed06d83712|1590154425||t20580.5486160232s|s5528b|5528|rds|local|vector|||0.053||
 output_fluxes_incline|stem|da2180c390afc64b|46b0059caf7ef1d1|d755c8db4f4c16d1|1374172988||t20580.5486169491s|s5528b|5528|rds|local|vector|||0.061||
+raw_fluxes_PFTC6|stem||064d740f6473ff0c|2c530c1562a7fbd1|1356039103|data/PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv|t20580.602068331s||0|file|local|vector|||||Error resolving output location: missing files: data/PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv
+import_fluxes_PFTC6|stem|0c287b1230a7229d|879f39d490633e95|2c530c1562a7fbd1|1763364129|data/PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv|t20580.6108234876s|s171606b|171606|file|local|vector|||8.658||
+read_fluxes_PFTC6|stem|e99207f1906cd47e|8ec5f539c3df48b7|ab32b600935ffdd6|1873096593||t20580.6108250154s|s35521b|35521|rds|local|vector|||0.085||
+read_incline_metadata|stem|3b29c30f75f4a784|57ff3c3c318e2e94|1b05017a79f0d7c6|-1246230469||t20580.6119858093s|s2226b|2226|rds|local|vector|||0.022||
+read_fluxes_incline_2022|stem|6c12e282607ed193|4725074469dba313|988a6fc69c4cdb6b|296465328||t20580.6119863649s|s45953b|45953|rds|local|vector|||0.007||
+import_fluxes_threeD|stem|3aeccbf78d6eab8a|7cecbdb2ddd8a26c|2c530c1562a7fbd1|451526265|data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv|t20580.6158038792s|s758186b|758186|file|local|vector|||3.282||
+read_fluxes_threeD|stem|5f0680c6a331d0a5|e9daf54341184e56|47a6b1b3ae0f303f|-612624008||t20580.6158054301s|s82660b|82660|rds|local|vector|||0.083|One or more parsing issues, call `problems()` on your data frame for details, e.g.:   dat <- vroom(...)   problems(dat)|
+prepare_fluxes_threeD|stem|7bb64f955aef79c5|45d266741e4f9455|d1ffd532a09c48a4|-156520403||t20580.615806032s|s25291b|25291|rds|local|vector|||0.023||
+prepare_fluxes_PFTC6|stem|2a647aeb3dddece2|9f7591b9276ec225|a88148e8e420093c|2072628195||t20580.6245244805s|s52982b|52982|rds|local|vector|||0.019||
+gather_fluxes_threeD_PFTC6|stem|a6fe6ec4dc3f9f5e|e638396b396c2b87|26d50aee7c245879|-937097386||t20580.6245249087s|s78532b|78532|rds|local|vector|||0.008||
+output_fluxes_threeD|stem|b2e1aae4526f9443|ebd4dd6f27794bef|8fbbc7a33a90c372|-2112975629||t20580.624526749s|s35275b|35275|rds|local|vector|||0.122||
+prepare_fluxes_threeD_fun|function|bf00962d3bdd117a
+prepare_fluxes_PFTC6_fun|function|45a4aeed37f4f6e7
+prepare_fluxes_incline_fun|function|13970d84e632891a

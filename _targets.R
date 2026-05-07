@@ -59,3 +59,5 @@ combined_plan <- c(
   threeD_plan,
   incline_plan
 )
+
+combined_plan

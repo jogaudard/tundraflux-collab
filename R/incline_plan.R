@@ -29,32 +29,32 @@ incline_plan <- list(
     ),
     format = "file"
     ),
-    tar_target(
-        name = raw_incline_metadata,
-        command = "data/INCLINE_metadata.csv",
-        format = "file"
-    ),
+    # tar_target(
+    #     name = raw_incline_metadata,
+    #     command = "data/INCLINE_metadata.csv",
+    #     format = "file"
+    # ),
     tar_target(
         name = read_incline_metadata,
-        command = read_csv2(raw_incline_metadata, show_col_types = FALSE)
+        command = read_csv2(import_incline_metadata, show_col_types = FALSE)
     ),
     # tar_target(
     #     name = raw_fluxes_incline_2020,
     #     command = "data/INCLINE_c-flux_2020.csv",
     #     format = "file"
     # ),
-    tar_target(
-        name = raw_fluxes_incline_2022,
-        command = "data/INCLINE_c-flux_2022.csv",
-        format = "file"
-    ),
+    # tar_target(
+    #     name = raw_fluxes_incline_2022,
+    #     command = "data/INCLINE_c-flux_2022.csv",
+    #     format = "file"
+    # ),
     # tar_target(
     #     name = read_fluxes_incline_2020,
     #     command = read_csv(raw_fluxes_incline_2020, show_col_types = FALSE)
     # ),
     tar_target(
         name = read_fluxes_incline_2022,
-        command = read_csv(raw_fluxes_incline_2022, show_col_types = FALSE)
+        command = read_csv(import_fluxes_incline_2022, show_col_types = FALSE)
     ),
     # tar_target(
     #     name = read_fluxes_incline,

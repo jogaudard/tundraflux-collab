@@ -1,29 +1,59 @@
 threeD_plan <- list(
   tar_target(
     name = import_fluxes_threeD,
-    command = download_zenodo(
+    command = {
+      download_zenodo(
       doi = "10.5281/zenodo.17301125",
       path = "data/",
       files = "xiii_Three-D_clean_co2_fluxes_2020-2021.csv"
-    ),
+    )
+    file.path("data", "xiii_Three-D_clean_co2_fluxes_2020-2021.csv") # because download zenodo doesn't return the path to the file, we need to specify it here for the target
+  },
     format = "file"
   ),
-  tar_target(
-    name = raw_fluxes_threeD,
-    command = "data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv",
-    format = "file"
-  ),
+  # tar_target(
+  #   name = raw_fluxes_threeD,
+  #   command = "data/xiii_Three-D_clean_co2_fluxes_2020-2021.csv",
+  #   format = "file"
+  # ),
   tar_target(
     name = read_fluxes_threeD,
-    command = read_csv(raw_fluxes_threeD, show_col_types = FALSE)
+    command = read_csv(import_fluxes_threeD, show_col_types = FALSE)
   ),
   tar_target(
     name = prepare_fluxes_threeD,
     command = prepare_fluxes_threeD_fun(read_fluxes_threeD)
   ),
   tar_target(
+    name = import_fluxes_PFTC6,
+    command = get_file(
+      node = "fcbw4",
+      file = "PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv",
+      path = "data",
+      remote_path = "v. c_flux_data"
+    ),
+    format = "file"
+  ),
+  # tar_target(
+  #   name = raw_fluxes_PFTC6,
+  #   command = "data/PFTC6_clean_GlobalChangeExperiment_cflux_2022.csv",
+  #   format = "file"
+  # ),
+  tar_target(
+    name = read_fluxes_PFTC6,
+    command = read_csv(import_fluxes_PFTC6, show_col_types = FALSE)
+  ),
+  tar_target(
+    name = prepare_fluxes_PFTC6,
+    command = prepare_fluxes_PFTC6_fun(read_fluxes_PFTC6)
+  ),
+  tar_target(
+    name = gather_fluxes_threeD_PFTC6,
+    command = bind_rows(prepare_fluxes_threeD, prepare_fluxes_PFTC6)
+  ),
+  tar_target(
     name = output_fluxes_threeD,
-    command = prepare_fluxes_threeD |>
+    command = gather_fluxes_threeD_PFTC6 |>
       select(
         treatment,
         plot_id,
